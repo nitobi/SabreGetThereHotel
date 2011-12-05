@@ -1,0 +1,63 @@
+body{
+  background: url("../images/bg.png") repeat-x scroll 0 0 #D2DDE6;
+}
+
+#GetThereHotel{
+  margin: 0 auto;
+  width: 600px;
+  padding: 0 20px;
+}
+
+.header {
+  height: 33px;
+  padding: 10px 0 0 0;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: #555555;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.wrap {
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  background-color: #D0DCE6;
+  border: 5px solid white;
+  padding: 20px;
+  max-width: 420px;
+  min-width: 200px;
+  min-width: 90%;
+  min-height: 60px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.searchInput{
+  width: 95%;
+  margin-bottom: 10px;
+}
+.button {
+  margin: 0 auto;
+  max-width: 420px;
+  min-width: 200px;
+  padding: 0 0 4px;
+  text-align: center;
+  width: 90%; 
+}
+
+.green {
+  margin: 0 auto;
+  width: 189px;
+  height: 41px;
+  background: url("../images/sprites4.png") no-repeat scroll 0 0 transparent;
+  background-position: 0 -250px;
+  font-size: 16px;
+  line-height: 40px;
+  color: #fff;
+  font-weight: bold;
+}
+

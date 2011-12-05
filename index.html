@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sabre GetThere Hotel</title>
+<link rel="stylesheet" href="css/html5boilerplate.css">
+<link rel="stylesheet" href="css/master.css">
+</head>
+
+<body>
+<div id="GetThereHotel" class="viewport">
+</div>
+
+<script type="text/template" id="search-template">
+  <div id="titleHeader" class="header">
+  
+  </div>
+  
+  <div class="wrap">
+  
+    <div id="hotelSearch">
+      <div class="label">City or Airport</div>
+      <input id="hotelSearch_Input" class="searchInput" type="text">
+    </div>
+    
+    <div id="checkIn">
+      <div class="label">Check In:</div>
+      <input id="checkIn_Input" class="searchInput" type="text">
+    </div>
+
+    <div id="checkOut">
+      <div class="label">Check Out:</div>
+      <input id="checkOut_Input" class="searchInput" type="text">
+    </div>    
+    
+    <div id="numPeople">
+      <div class="label">Number of People:</div>
+      <select id="numPeople_Input">
+      </select>
+    </div>    
+    
+    <div id="stayLength">
+    </div>
+    
+
+  </div>
+  <div id="searchButton" class="button green" >Search</div>
+</script>
+
+ 
+<script src="lib/jquery.js"></script>
+<script src="lib/jquery.mobile.support.js"></script>
+<script src="lib/jquery.mobile.vmouse.js"></script>
+<script src="lib/jquery.mobile.event.js"></script>
+<script src="lib/handlebars.js"></script>
+<script src="lib/underscore.js"></script>
+<script src="lib/backbone.js"></script>
+<script src="app/helpers.js"></script>
+<script src="app/app.js"></script>
+<script src="app/controllers.js"></script>
+<script src="app/views.js"></script>
+</body>
+</html>
