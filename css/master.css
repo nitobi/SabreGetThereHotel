@@ -1,10 +1,14 @@
+html{
+
+}
+
 body{
   background: url("../images/bg.png") repeat-x scroll 0 0 #D2DDE6;
 }
 
 #GetThereHotel{
   margin: 0 auto;
-  padding: 0 20px;
+  width: 420px;
 }
 
 .header {
