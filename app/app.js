@@ -1,7 +1,7 @@
 (function(){
   GetThereHotel.namespace('GetThereHotel.User');
   GetThereHotel.Config ={
-    appURL : '',
+    appURL : 'http://mobileengine2.sabre.com:8080/MTX-WEB-DEV/',
   };
   
   GetThereHotel.initialize = function(){
