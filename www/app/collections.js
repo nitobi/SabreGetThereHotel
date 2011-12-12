@@ -3,7 +3,7 @@
   GetThereHotel.namespace('GetThereHotel.Collections');
 
   var buildURL = function(options, path) {
-		var URL = (options && options.URL) || StaffManager.Config.appURL;
+		var URL = (options && options.URL) || GetThereHotel.Config.appURL;
 		var full = URL + path;
 		return full;
 	};

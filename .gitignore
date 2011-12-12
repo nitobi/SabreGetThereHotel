@@ -1,0 +1,18 @@
+#############
+# Build Files
+#############
+lib
+temp
+build
+*.war
+*.class
+
+#############
+# Test directories
+#############
+test
+
+#############
+# OS
+#############
+.DS_Store

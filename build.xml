@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<project name="SabreGetThereHotel" default="jar" basedir=".">
+    <!-- output directory of the .war file -->
+    <property name="build.dir" value="build" />
+	<property name="temp.dir" value="temp" />
+	<!-- YUI Compressor dependencies -->
+	<property name="yuicompressor.jar" value="util/yui-compressor/lib/yuicompressor-2.4.2.jar" />
+	<property name="yuicompressor-ant-task.jar" value="util/yui-compressor/bin/yui-compressor-ant-task-0.5.jar" />
+	<path id="task.classpath">
+		<pathelement location="${yuicompressor.jar}" />
+		<pathelement location="${yuicompressor-ant-task.jar}" />
+	</path>
+	<taskdef name="yui-compressor" classname="net.noha.tools.ant.yuicompressor.tasks.YuiCompressorTask">
+		<classpath refid="task.classpath" />
+	</taskdef>
+	  
+	<target name="minify" depends="prepare">
+		<yui-compressor warn="false" munge="true" jsSuffix=".js" cssSuffix=".css" preserveAllSemiColons="false" fromDir="www/app" toDir="${temp.dir}/www/app">
+			<include name="**/*.js" />
+		</yui-compressor>
+		<echo>Building .war file...</echo>
+        <jar destfile="${build.dir}/SabreGetThereHotel.war" excludes=".git/** build.xml ${build.dir}/** util/**" basedir="${temp.dir}" />
+        <echo>... .war file built.</echo>
+	</target>
+	
+    <target name="jar" depends="prepare">
+		<copy todir="${temp.dir}">
+			<fileset dir="." excludes="${temp.dir}/**" includes="**/*.js" />
+		</copy>
+        <echo>Building .war file...</echo>
+        <jar destfile="${build.dir}/SabreGetThereHotel.war" basedir="${temp.dir}" />
+        <echo>... .war file built.</echo>
+    </target>
+    
+    <target name="prepare" depends="clean" description="Creates output directory.">
+        <echo>Creating output directory...</echo>
+        <mkdir dir="${build.dir}" />
+		<echo>... created.</echo>
+		<echo>Creating temporary directory...</echo>
+		<mkdir dir="${temp.dir}" />
+        <echo>... created.</echo>
+		<echo>Copying source files over...</echo>
+		<copy todir="${temp.dir}">
+			<fileset dir="." excludes="${temp.dir}/** build.xml .gitignore .git/ util/ ${build.dir}/ **/*.js" />
+		</copy>
+		<echo>... done.</echo>
+    </target>
+    
+    <target name="clean" description="Remove all generated files.">
+        <echo>Cleaning...</echo>
+        <delete dir="${build.dir}" />
+		<delete dir="${temp.dir}" />
+		<delete>
+			<fileset dir="." includes="**/*.class"/>
+		</delete>
+        <echo>... complete.</echo>
+  </target>
+</project>
